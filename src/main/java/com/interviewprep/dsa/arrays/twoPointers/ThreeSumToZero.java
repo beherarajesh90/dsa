@@ -1,4 +1,4 @@
-package com.interviewprep.dsa.twoPointers;
+package com.interviewprep.dsa.arrays.twoPointers;
 
 import java.util.ArrayList;
 import java.util.Arrays;

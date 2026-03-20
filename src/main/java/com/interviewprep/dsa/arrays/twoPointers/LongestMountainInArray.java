@@ -1,4 +1,4 @@
-package com.interviewprep.dsa.twoPointers;
+package com.interviewprep.dsa.arrays.twoPointers;
 
 public class LongestMountainInArray {
     public int longestMountain(int[] arr) {

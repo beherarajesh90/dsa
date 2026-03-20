@@ -1,4 +1,4 @@
-package com.interviewprep.dsa.twoPointers;
+package com.interviewprep.dsa.arrays.twoPointers;
 
 public class RemoveDuplicatesFromSortedArrayII {
     public int removeDuplicates(int[] nums) {
