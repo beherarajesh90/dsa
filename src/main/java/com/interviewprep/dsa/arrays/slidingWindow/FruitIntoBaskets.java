@@ -21,4 +21,20 @@ public class FruitIntoBaskets {
         }
         return maxFruits;
     }
+
+    public int totalFruitOptimized(int[] fruits) {
+        int[] freq = new int[100001];
+        int left=0, maxFruits = 0, unique=0;
+        for(int right=0; right<fruits.length; right++){
+            if(freq[fruits[right]] == 0) unique++;
+            freq[fruits[right]]++;
+            while(unique>2){
+                freq[fruits[left]]--;
+                if(freq[fruits[left]] == 0) unique--;
+                left++;
+            }
+            maxFruits = Math.max(maxFruits, right - left + 1);
+        }
+        return maxFruits;
+    }
 }
