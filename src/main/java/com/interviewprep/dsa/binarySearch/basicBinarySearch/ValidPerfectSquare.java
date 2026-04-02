@@ -1,4 +1,4 @@
-package com.interviewprep.dsa.binarySearch;
+package com.interviewprep.dsa.binarySearch.basicBinarySearch;
 
 public class ValidPerfectSquare {
     public boolean isPerfectSquare(int num) {
