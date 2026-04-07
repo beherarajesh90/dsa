@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+//https://leetcode.com/problems/count-number-of-rectangles-containing-each-point/submissions/1971292405/
 public class CountNumberOfRectanglesContainingEachPoint {
     public int[] countRectangles(int[][] rectangles, int[][] points) {
         List<Integer>[] buckets = new ArrayList[101];
