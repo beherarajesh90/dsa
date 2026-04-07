@@ -1,5 +1,6 @@
 package com.interviewprep.dsa.binarySearch.bitonicArraySearch;
 
+//https://leetcode.com/problems/find-peak-element/description/
 public class FindPeakElement {
     public int findPeakElement(int[] nums) {
         int left = 0, right = nums.length - 1;
