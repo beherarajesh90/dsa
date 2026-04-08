@@ -20,4 +20,16 @@ public class ValidAnagram {
         }
         return true;
     }
+
+    public boolean canConstructUsingOneLoop(String ransomNote, String magazine) {
+        if(magazine.length() < ransomNote.length()) return false;
+        int[] alphabet = new int[26];
+
+        for (char c : ransomNote.toCharArray()) {
+            int i = magazine.indexOf(c, alphabet[c % 26]);
+            if (i == -1) return false;
+            alphabet[c % 26] = i + 1;
+        }
+        return true;
+    }
 }

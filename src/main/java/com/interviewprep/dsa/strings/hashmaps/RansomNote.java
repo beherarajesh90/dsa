@@ -1,5 +1,6 @@
 package com.interviewprep.dsa.strings.hashmaps;
 
+//https://leetcode.com/problems/ransom-note/
 public class RansomNote {
     public boolean canConstruct(String ransomNote, String magazine) {
         int[] freq = new int[26];
