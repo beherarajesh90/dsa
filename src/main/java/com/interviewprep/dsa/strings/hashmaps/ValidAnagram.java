@@ -1,6 +1,6 @@
 package com.interviewprep.dsa.strings.hashmaps;
 
-//https://leetcode.com/problems/ransom-note/
+https://leetcode.com/problems/valid-anagram/
 public class ValidAnagram {
     public boolean isAnagram(String s, String t) {
         int[] freq = new int[26];
