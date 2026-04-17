@@ -1,4 +1,4 @@
-package com.interviewprep.dsa.recursion;
+package com.interviewprep.dsa.recursion.basicRecursiveFunctions;
 
 //https://leetcode.com/problems/fibonacci-number/description/
 public class FibonacciNumber {
