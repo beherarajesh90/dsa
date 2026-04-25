@@ -1,0 +1,3 @@
+- changing the head of the linked list
+- modify, delete, change in lined list(add two lists)
+- a new list is created
