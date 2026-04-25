@@ -1,5 +1,7 @@
 package com.interviewprep.dsa.linkedList.fastAndSlowPointer;
 
+import com.interviewprep.dsa.linkedList.ListNode;
+
 //https://leetcode.com/problems/odd-even-linked-list/description/
 public class OddEvenLinkedList {
     public ListNode oddEvenList(ListNode head) {

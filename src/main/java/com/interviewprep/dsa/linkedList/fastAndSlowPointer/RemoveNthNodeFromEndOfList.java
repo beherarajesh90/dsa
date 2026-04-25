@@ -1,5 +1,7 @@
 package com.interviewprep.dsa.linkedList.fastAndSlowPointer;
 
+import com.interviewprep.dsa.linkedList.ListNode;
+
 //https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/
 public class RemoveNthNodeFromEndOfList {
     public ListNode removeNthFromEnd(ListNode head, int n) {

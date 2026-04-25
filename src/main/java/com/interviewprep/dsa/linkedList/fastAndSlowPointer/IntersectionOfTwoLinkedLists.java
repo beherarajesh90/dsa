@@ -1,5 +1,7 @@
 package com.interviewprep.dsa.linkedList.fastAndSlowPointer;
 
+import com.interviewprep.dsa.linkedList.ListNode;
+
 public class IntersectionOfTwoLinkedLists {
     public ListNode getIntersectionNodeOptimized(ListNode headA, ListNode headB) {
         if(headA == null || headB == null) return null;
