@@ -16,4 +16,26 @@ public class RemoveDuplicatesFromSortedListII {
         head.next = deleteDuplicates(head.next);
         return head;
     }
+
+    public ListNode deleteDuplicatesIterative(ListNode head) {
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode prev = dummy;
+
+        while (head != null) {
+            if (head.next != null && head.val == head.next.val) {
+                // Skip nodes whose values are duplicated
+                while (head.next != null && head.val == head.next.val) {
+                    head = head.next;
+                }
+                // Connect prev with the node after the duplicates
+                prev.next = head.next;
+            } else {
+                prev = prev.next;
+            }
+            head = head.next;
+        }
+
+        return dummy.next;
+    }
 }
