@@ -1,0 +1,4 @@
+- need to reverse pointer
+- no extra space
+- segment based reversal (reverse specified region)
+- reordering notes
