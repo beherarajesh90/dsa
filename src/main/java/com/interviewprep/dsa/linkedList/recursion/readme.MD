@@ -1,0 +1,3 @@
+- problem repeats on smaller lists
+- clear base case
+- return value is used to rebuild list
