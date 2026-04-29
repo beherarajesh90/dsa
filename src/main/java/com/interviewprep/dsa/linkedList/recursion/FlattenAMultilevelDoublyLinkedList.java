@@ -1,5 +1,7 @@
 package com.interviewprep.dsa.linkedList.recursion;
 
+import com.interviewprep.dsa.linkedList.Node;
+
 public class FlattenAMultilevelDoublyLinkedList {
     public Node flatten(Node head) {
         if(head == null) return head;
