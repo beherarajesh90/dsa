@@ -1,0 +1,3 @@
+- next greater or smaller
+- need left/right comparison
+- one pass solution
