@@ -1,0 +1,4 @@
+- sliding window minimum
+- moving average
+- max sum subarray
+- continuous array with limit
