@@ -1,4 +1,4 @@
-package com.interviewprep.dsa.stacksAndQueues.slidingWindowAndMonotonicQueue.readme;
+package com.interviewprep.dsa.stacksAndQueues.slidingWindowAndMonotonicQueue;
 
 import java.util.Deque;
 
