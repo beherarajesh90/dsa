@@ -1,4 +1,4 @@
-package com.interviewprep.dsa.binaryTreesAndBST;
+package com.interviewprep.dsa.binaryTreesAndBST.traversal;
 
 import java.util.ArrayList;
 import java.util.List;
