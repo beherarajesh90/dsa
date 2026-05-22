@@ -2,6 +2,7 @@ package com.interviewprep.dsa.binaryTreesAndBST.traversalAndSearch;
 
 import com.interviewprep.dsa.binaryTreesAndBST.traversal.TreeNode;
 
+//https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
 public class LowestCommonAncestorOfABinarySearchTree {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         // Case 1: both nodes are smaller
