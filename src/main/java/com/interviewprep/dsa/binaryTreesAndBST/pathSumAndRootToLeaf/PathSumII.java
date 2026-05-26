@@ -23,6 +23,7 @@ public class PathSumII {
 
         //if leaf node check  if remaining sum is equal to leaf node
         if(root.val == remainingSum && root.left == null && root.right == null){
+            //result.add(curPath) will store the reference of the list.
             result.add(new ArrayList<>(curPath));
         }
         curPath.removeLast();
