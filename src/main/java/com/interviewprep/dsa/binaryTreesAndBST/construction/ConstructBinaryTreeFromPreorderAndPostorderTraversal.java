@@ -16,11 +16,10 @@ public class ConstructBinaryTreeFromPreorderAndPostorderTraversal {
             map.put(postorder[i], i);
         }
 
-        return build(preorder, postorder, 0, postorder.length - 1);
+        return build(preorder, 0, postorder.length - 1);
     }
 
-    private TreeNode build(int[] preorder, int[] postorder,
-                           int postStart, int postEnd) {
+    private TreeNode build(int[] preorder, int postStart, int postEnd) {
 
         if (postStart > postEnd)
             return null;
@@ -39,12 +38,10 @@ public class ConstructBinaryTreeFromPreorderAndPostorderTraversal {
         int index = map.get(leftRoot);
 
         // build left subtree
-        root.left = build(preorder, postorder,
-                postStart, index);
+        root.left = build(preorder, postStart, index);
 
         // build right subtree
-        root.right = build(preorder, postorder,
-                index + 1, postEnd - 1);
+        root.right = build(preorder, index + 1, postEnd - 1);
 
         return root;
     }
