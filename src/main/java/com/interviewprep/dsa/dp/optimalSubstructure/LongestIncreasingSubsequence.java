@@ -44,20 +44,22 @@ public class LongestIncreasingSubsequence {
 
     //tabulation with binary search(O(nlogn))
     private int lengthOfLISTabBinarySearch(int[] nums){
-        int n = nums.length-1;
         List<Integer> dp = new ArrayList<>();
         dp.add(nums[0]);
+
         int LIS = 1;
-        for(int i=1; i<n; i++){
-            if(dp.getLast() < nums[i]){
+        for (int i = 1; i < nums.length; i++) {
+            if (dp.getLast() < nums[i]) {
                 dp.add(nums[i]);
                 LIS++;
-            } else {
-                int index = Collections.binarySearch(dp, nums[i]);
-                if (index < 0) index = -index - 1;
-                dp.set(index, nums[i]);
+                continue;
             }
+
+            int idx = Collections.binarySearch(dp, nums[i]);
+            if (idx < 0) idx = -idx - 1;
+            dp.set(idx, nums[i]);
         }
+
         return LIS;
     }
 
