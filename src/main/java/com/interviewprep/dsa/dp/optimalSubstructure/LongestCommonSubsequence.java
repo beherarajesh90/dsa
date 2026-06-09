@@ -45,7 +45,24 @@ public class LongestCommonSubsequence {
         return dp[i][j];
     }
 
-    //tabulation
+    //tabulation-1
+    private int longestCommonSubsequenceTab1(String text1, String text2) {
+        int[][] dp = new int[text1.length() + 1][text2.length() + 1];
+
+        for (int i = text1.length() - 1; i >= 0; i--) {
+            for (int j = text2.length() - 1; j >= 0; j--) {
+                if (text1.charAt(i) == text2.charAt(j)) {
+                    dp[i][j] = 1 + dp[i + 1][j + 1];
+                } else {
+                    dp[i][j] = Math.max(dp[i][j + 1], dp[i + 1][j]);
+                }
+            }
+        }
+
+        return dp[0][0];
+    }
+
+    //tabulation-interviewprep
     private int lcsTab(String text1, String text2){
         int m = text1.length();
         int n = text2.length();
@@ -74,5 +91,31 @@ public class LongestCommonSubsequence {
         }
 
         return nextDp[0];
+    }
+
+    //tabulation-3 most optimal
+    private int longestCommonSubsequence3(String text1, String text2) {
+        if (text1.length() < text2.length()) {
+            String temp = text1;
+            text1 = text2;
+            text2 = temp;
+        }
+
+        int[] dp = new int[text2.length() + 1];
+
+        for (int i = text1.length() - 1; i >= 0; i--) {
+            int prev = 0;
+            for (int j = text2.length() - 1; j >= 0; j--) {
+                int temp = dp[j];
+                if (text1.charAt(i) == text2.charAt(j)) {
+                    dp[j] = 1 + prev;
+                } else {
+                    dp[j] = Math.max(dp[j], dp[j + 1]);
+                }
+                prev = temp;
+            }
+        }
+
+        return dp[0];
     }
 }
