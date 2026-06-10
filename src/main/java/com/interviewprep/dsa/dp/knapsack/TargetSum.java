@@ -85,4 +85,32 @@ public class TargetSum {
         }
         return dp.getOrDefault(target, 0);
     }
+
+    //most optimal way
+    public int findTargetSumWaysTabOptimal(int[] nums, int target) {
+        int totalSum = 0;
+        for (int num : nums) {
+            totalSum += num;
+        }
+
+        // Check if a valid subset sum exists
+        if ((target + totalSum) % 2 != 0 || target + totalSum < 0) {
+            return 0;
+        }
+
+        int subsetSum = (target + totalSum) / 2;
+
+        // dp[s] = number of subsets that sum to s
+        int[] dp = new int[subsetSum + 1];
+        dp[0] = 1;
+
+        for (int num : nums) {
+            // Iterate right to left to avoid reusing the same element
+            for (int s = subsetSum; s >= num; s--) {
+                dp[s] += dp[s - num];
+            }
+        }
+
+        return dp[subsetSum];
+    }
 }
