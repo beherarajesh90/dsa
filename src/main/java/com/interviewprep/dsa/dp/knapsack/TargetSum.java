@@ -86,7 +86,7 @@ public class TargetSum {
         return dp.getOrDefault(target, 0);
     }
 
-    //most optimal way
+    //most optimal way (https://algomaster.io/learn/dsa/target-sum)
     public int findTargetSumWaysTabOptimal(int[] nums, int target) {
         int totalSum = 0;
         for (int num : nums) {
