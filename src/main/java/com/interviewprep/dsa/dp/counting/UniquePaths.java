@@ -18,7 +18,9 @@ public class UniquePaths {
 
         // return uniquePathsTabOptimized(m, n);
 
-        return uniquePathsTabOptimal(m, n);
+        // return uniquePathsTabOptimal(m, n);
+
+        return uniquePathsUsingCombinationTrick(m, n);
     }
 
     //recursive
@@ -84,5 +86,23 @@ public class UniquePaths {
         return row[0];
     }
 
-    //explore the math technique to find the paths using combinations ( optimal)
+    //explore the math technique to find the paths using combinations (optimal)
+    private int uniquePathsUsingCombinationTrick(int m, int n) {
+        int totalMoves = m + n - 2;
+        int downMoves = m - 1;
+
+        return (int) nCr(totalMoves, downMoves);
+    }
+
+    private long nCr(int n, int r) {
+        r = Math.min(r, n - r); //C(n, r) = C(n, n-r)
+
+        long res = 1;
+
+        for (int i = 1; i <= r; i++) {
+            res = res * (n - r + i) / i;
+        }
+
+        return res;
+    }
 }
