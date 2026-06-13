@@ -1,5 +1,7 @@
 package com.interviewprep.dsa.dp.optimalSubstructure;
 
+import java.util.Arrays;
+
 //https://leetcode.com/problems/longest-palindromic-subsequence/description/
 public class LongestPalindromicSubsequence {
     private int[][] dp;
@@ -158,5 +160,55 @@ public class LongestPalindromicSubsequence {
         }
 
         return dp[n-1];
+    }
+
+    //algo master approach
+
+    public int longestPalindromeSubseqMemoAM(String s) {
+        int n = s.length();
+        int[][] dp = new int[n][n];
+
+        // Every single character is a palindrome of length 1
+        for (int i = 0; i < n; i++) {
+            dp[i][i] = 1;
+        }
+
+        // Fill table for increasing substring lengths
+        for (int len = 2; len <= n; len++) {
+            for (int i = 0; i <= n - len; i++) {
+                int j = i + len - 1;
+                if (s.charAt(i) == s.charAt(j)) {
+                    dp[i][j] = dp[i + 1][j - 1] + 2;
+                } else {
+                    dp[i][j] = Math.max(dp[i + 1][j], dp[i][j - 1]);
+                }
+            }
+        }
+
+        return dp[0][n - 1];
+    }
+
+    public int longestPalindromeSubseqTabAM(String s) {
+        int n = s.length();
+        int[] dp = new int[n];
+
+        // Base case: every character is a palindrome of length 1
+        Arrays.fill(dp, 1);
+
+        // Process rows from bottom to top
+        for (int i = n - 2; i >= 0; i--) {
+            int prev = 0; // Stores old dp[j-1] before overwrite
+            for (int j = i + 1; j < n; j++) {
+                int temp = dp[j]; // Save current value before overwrite
+                if (s.charAt(i) == s.charAt(j)) {
+                    dp[j] = prev + 2;
+                } else {
+                    dp[j] = Math.max(dp[j], dp[j - 1]);
+                }
+                prev = temp;
+            }
+        }
+
+        return dp[n - 1];
     }
 }
