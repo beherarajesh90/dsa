@@ -166,26 +166,24 @@ public class LongestPalindromicSubsequence {
 
     public int longestPalindromeSubseqMemoAM(String s) {
         int n = s.length();
-        int[][] dp = new int[n][n];
-
-        // Every single character is a palindrome of length 1
-        for (int i = 0; i < n; i++) {
-            dp[i][i] = 1;
+        int[][] memo = new int[n][n];
+        for (int[] row : memo) {
+            Arrays.fill(row, -1);
         }
+        return solve(s, 0, n - 1, memo);
+    }
 
-        // Fill table for increasing substring lengths
-        for (int len = 2; len <= n; len++) {
-            for (int i = 0; i <= n - len; i++) {
-                int j = i + len - 1;
-                if (s.charAt(i) == s.charAt(j)) {
-                    dp[i][j] = dp[i + 1][j - 1] + 2;
-                } else {
-                    dp[i][j] = Math.max(dp[i + 1][j], dp[i][j - 1]);
-                }
-            }
+    private int solve(String s, int i, int j, int[][] memo) {
+        if (i > j) return 0;
+        if (i == j) return 1;
+        if (memo[i][j] != -1) return memo[i][j];
+
+        if (s.charAt(i) == s.charAt(j)) {
+            memo[i][j] = solve(s, i + 1, j - 1, memo) + 2;
+        } else {
+            memo[i][j] = Math.max(solve(s, i + 1, j, memo), solve(s, i, j - 1, memo));
         }
-
-        return dp[0][n - 1];
+        return memo[i][j];
     }
 
     public int longestPalindromeSubseqTabAM(String s) {
