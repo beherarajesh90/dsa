@@ -5,6 +5,7 @@ public class SoupServings {
     private double[][] dp;
     public double soupServings(int n) {
 
+        //for n>=4800, probability is close to 1
         if(n >= 4800) return 1.0;
 
         // all the quantities are divisible by 25. divide by 25 to decrease the dp state
