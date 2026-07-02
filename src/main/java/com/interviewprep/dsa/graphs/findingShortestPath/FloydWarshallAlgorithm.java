@@ -35,10 +35,9 @@ public class FloydWarshallAlgorithm {
                 }
             }
         }
-//        k=0: allow vertex 0
-//        k=1: allow vertices 0,1
-//        k=2: allow vertices 0,1,2
+
         // Try every vertex as an intermediate
+//        For each pair (i, j), check if going through vertex k improves the path.
         for (int k = 0; k < V; k++) {
             for (int i = 0; i < V; i++) {
                 for (int j = 0; j < V; j++) {
