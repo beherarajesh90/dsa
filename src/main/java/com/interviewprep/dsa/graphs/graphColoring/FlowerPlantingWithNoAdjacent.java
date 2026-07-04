@@ -5,6 +5,8 @@ import java.util.List;
 
 //https://leetcode.com/problems/flower-planting-with-no-adjacent/description/
 public class FlowerPlantingWithNoAdjacent {
+
+    // greedy
     public int[] gardenNoAdj(int n, int[][] paths) {
 
         List<Integer>[] graph = new ArrayList[n];
