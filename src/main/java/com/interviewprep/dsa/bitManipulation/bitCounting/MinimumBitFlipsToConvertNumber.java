@@ -1,4 +1,4 @@
-package com.interviewprep.dsa.bitManipulation;
+package com.interviewprep.dsa.bitManipulation.bitCounting;
 
 //https://leetcode.com/problems/minimum-bit-flips-to-convert-number/description/
 public class MinimumBitFlipsToConvertNumber {
