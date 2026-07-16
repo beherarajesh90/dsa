@@ -1,4 +1,4 @@
-package com.interviewprep.dsa.bitManipulation;
+package com.interviewprep.dsa.bitManipulation.xorTricks;
 
 import java.util.HashSet;
 import java.util.Set;

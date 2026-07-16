@@ -1,4 +1,4 @@
-package com.interviewprep.dsa.bitManipulation;
+package com.interviewprep.dsa.bitManipulation.xorTricks;
 
 //https://leetcode.com/problems/single-number-ii/description/
 public class SingleNumberII {
